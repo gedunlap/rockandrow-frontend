@@ -5,6 +5,9 @@ export default function Header() {
     return (
         <nav className="nav">
             <Link to='/'>
+                <div>Home</div>
+            </Link>
+            <Link to='/list'>
                 <div>Rock N Row</div>
             </Link>
         </nav>

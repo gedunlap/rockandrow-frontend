@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Index from '../pages/Index'
 import Show from '../pages/Show'
+import Home from '../pages/Home'
 
 export default function Main(props) {
     const [workouts, setWorkouts] = useState(null)
@@ -50,6 +51,9 @@ export default function Main(props) {
         <main>
             <Switch>
                 <Route exact path='/'>
+                    <Home />
+                </Route>
+                <Route path='/list'>
                     <Index workouts={workouts} createWorkouts={createWorkouts} />
                 </Route>
                 <Route
