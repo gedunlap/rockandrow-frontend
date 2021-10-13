@@ -14,12 +14,13 @@ $contrastcolor: white;
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 nav {
   @include white-text-black-bg;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 
   a {
     @include white-text-black-bg;
@@ -27,6 +28,10 @@ nav {
       margin: 10px;
       font-size: large;
     }
+  }
+
+  img {
+    max-height: 40px;
   }
 }
 
