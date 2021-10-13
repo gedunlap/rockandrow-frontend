@@ -29,3 +29,12 @@ nav {
     }
   }
 }
+
+.workout {
+  display: flex;
+  justify-content: center;
+
+  .workoutitem {
+    margin: 10px 20px;
+  }
+}

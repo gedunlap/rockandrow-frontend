@@ -26,6 +26,24 @@ export default function Main(props) {
         getWorkouts()
     }
 
+    const updateWorkouts = async (workout, id) => {
+        await fetch(URL + id, {
+            method: "put",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(workout)
+        })
+        getWorkouts()
+    }
+
+    const deleteWorkouts = async id => {
+        await fetch(URL + id, {
+            method: "delete"
+        })
+        getWorkouts()
+    }
+
     useEffect(() => getWorkouts(), [])
 
     return (
@@ -36,7 +54,14 @@ export default function Main(props) {
                 </Route>
                 <Route
                     path='/workouts/:id'
-                    render={(rp) => (<Show {...rp} />)}
+                    render={(rp) => (
+                        <Show
+                            workouts={workouts}
+                            updateWorkouts={updateWorkouts}
+                            deleteWorkouts={deleteWorkouts}
+                            {...rp}
+                        />
+                    )}
                 />
             </Switch>
         </main>
