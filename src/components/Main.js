@@ -7,7 +7,7 @@ import Show from '../pages/Show'
 export default function Main(props) {
     const [workouts, setWorkouts] = useState(null)
 
-    const URL = "https://rockandrow-backend.herokuapp.com/workouts"
+    const URL = "https://rockandrow-backend.herokuapp.com/workouts/"
 
     const getWorkouts = async () => {
         const response = await fetch(URL)
