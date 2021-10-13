@@ -3,8 +3,9 @@ import YoutubeEmbed from '../components/YoutubeEmbed'
 
 export default function Home() {
     return (
-        <div>
+        <div className="homepage">
             <img src="https://i.imgur.com/PgK41G7.png" alt="rock and row logo" />
+            <p>Rock and Row is an app made simply to store your rowing workout stats.</p>
             <YoutubeEmbed />
         </div>
     )
