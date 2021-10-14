@@ -66,16 +66,17 @@ nav {
     display: flex;
     flex-direction: column;
     background-color: whitesmoke;
-    width: 50%;
+    width: 30%;
     box-shadow: 5px 5px 5px gray;
     border-radius: 10px;
     height: 300px;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    padding: 10px 0;
 
     .formitem {
-      width: 50%;
+      width: 75%;
       margin: 5px 0;
       padding: 5px;
       border-radius: 5px;
