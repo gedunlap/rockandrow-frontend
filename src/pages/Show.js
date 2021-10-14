@@ -15,26 +15,27 @@ export default function Show(props) {
     const handleSubmit = event => {
         event.preventDefault()
         props.updateWorkouts(editForm, workout._id)
-        props.history.push('/')
+        props.history.push('/list')
     }
 
     const removeWorkout = () => {
         props.deleteWorkouts(workout._id)
-        props.history.push('/')
+        props.history.push('/list')
     }
 
     return (
-        <div>
+        <div className="show">
             <h1 className="workoutitem">Date: {workout.date}</h1>
             <h1 className="workoutitem">Time: {workout.time}</h1>
             <h1 className="workoutitem">Distance: {workout.distance}</h1>
             <h1 className="workoutitem">Drag: {workout.drag}</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="form">
                 <input
                     type="date"
                     value={editForm.date}
                     name="date"
                     onChange={handleChange}
+                    className="formitem"
                 />
                 <input
                     type="text"
@@ -42,6 +43,7 @@ export default function Show(props) {
                     name="time"
                     placeholder="00:00"
                     onChange={handleChange}
+                    className="formitem"
                 />
                 <input
                     type="number"
@@ -49,6 +51,7 @@ export default function Show(props) {
                     name="distance"
                     placeholder="Distance"
                     onChange={handleChange}
+                    className="formitem"
                 />
                 <input
                     type="number"
@@ -56,10 +59,11 @@ export default function Show(props) {
                     name="drag"
                     placeholder="Drag"
                     onChange={handleChange}
+                    className="formitem"
                 />
-                <input type="submit" value="UPDATE" />
+                <input type="submit" value="UPDATE" className="formitem" id="submit" />
             </form>
-            <button id="delete" onClick={removeWorkout}>DELETE</button>
+            <button id="delete" onClick={removeWorkout} style={{ backgroundColor:"red", borderRadius:"5px", border:"solid black 1px", color:"white", marginBottom:"30px"}}>DELETE WORKOUT</button>
         </div>
     )
 }
