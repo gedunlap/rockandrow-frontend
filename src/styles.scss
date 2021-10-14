@@ -14,29 +14,71 @@ $contrastcolor: white;
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Cormorant Garamond', serif;
 }
 
 nav {
   @include white-text-black-bg;
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  align-items: center;
 
   a {
     @include white-text-black-bg;
     div {
       margin: 10px;
       font-size: large;
+      font-weight: 900;
     }
   }
 
+  .navitem {
+    margin: 0 30px;
+  }
+
   img {
-    max-height: 40px;
+    max-height: 60px;
   }
 }
 
 .homepage {
   margin: 30px 0;
+}
+
+.index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    width: 50%;
+    box-shadow: 5px 5px 5px gray;
+    border-radius: 10px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+
+    .formitem {
+      width: 50%;
+      margin: 5px 0;
+      padding: 5px;
+      border-radius: 5px;
+      text-align: center;
+      border: solid black 1px;
+    }
+
+    label {
+      font-weight: 600;
+    }
+
+    #submit {
+      background-color: rgb(0, 217, 255);
+      border: solid rgb(0, 217, 255);
+    }
+  }
 }
 
 .workout {
@@ -45,5 +87,30 @@ nav {
 
   .workoutitem {
     margin: 10px 20px;
+  }
+  
+  button {
+    background-color: rgb(0, 217, 255);
+    padding: 7px;
+    border-radius: 5px;
+    border: solid black 1px;
+    font-weight: 900;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+
+  .nav {
+    justify-content: space-around;
+  }
+
+  .index {
+    .form {
+      width: 80%;
+
+      .formitem {
+        width: 90%;
+      }
+    }
   }
 }

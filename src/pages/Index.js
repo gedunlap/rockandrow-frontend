@@ -28,7 +28,7 @@ export default function Index(props) {
     const loaded = () => {
         return props.workouts.map((workout) => (
             <div key={workout._id} className='workout'>
-                <Link to={`/workouts/${workout._id}`}><h1>{workout.date}</h1></Link>
+                <Link to={`/workouts/${workout._id}`} style={{ textDecoration: "none" }}><h1><button>{workout.date}</button></h1></Link>
             </div>
         ))
     }
@@ -38,36 +38,44 @@ export default function Index(props) {
     }
 
     return (
-        <section>
-            <form onSubmit={handleSubmit}>
+        <section className="index">
+            <form onSubmit={handleSubmit} className="form">
+                <label htmlFor="date">Date</label>
                 <input
                     type="date"
                     value={newForm.date}
                     name="date"
                     onChange={handleChange}
+                    className="formitem"
                 />
+                <label htmlFor="time">Time</label>
                 <input
                     type="text"
                     value={newForm.time}
                     name="time"
                     placeholder="00:00"
                     onChange={handleChange}
+                    className="formitem"
                 />
+                <label htmlFor="distance">Distance</label>
                 <input
                     type="number"
                     value={newForm.distance}
                     name="distance"
-                    placeholder="Distance"
+                    placeholder="0"
                     onChange={handleChange}
+                    className="formitem"
                 />
+                <label htmlFor="drag">Drag</label>
                 <input
                     type="number"
                     value={newForm.drag}
                     name="drag"
-                    placeholder="Drag"
+                    placeholder="0"
                     onChange={handleChange}
+                    className="formitem"
                 />
-                <input type="submit" value="SUBMIT" />
+                <input type="submit" value="SUBMIT" className="formitem" id="submit" />
             </form>
             {props.workouts ? loaded() : loading()}
         </section>
